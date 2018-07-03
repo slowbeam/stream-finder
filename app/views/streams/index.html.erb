@@ -1,0 +1,12 @@
+
+<% if @streams.blank? %>
+  <h4>There are no streams containing the terms <%= params[:search] %>.</h4>
+<% elsif @streams.length < Stream.all.length %>
+
+<h2>Here are your matching streams:</h2>
+<ul>
+  <% @streams.each do |stream| %>
+  <li><%= link_to stream.title, stream.link %></li>
+  <% end %>
+</ul>
+<% end %>

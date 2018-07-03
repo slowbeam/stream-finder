@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>StreamFinder</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <h1>Please Search for a Stream:</h1>
+    <%= form_tag(streams_path, method: "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Streams" %>
+    <%= submit_tag "Search", name: nil %>
+    <% end %>
+    
+    <%= yield %>
+
+  </body>
+</html>
